@@ -30,7 +30,7 @@ def get_menu_table():
     return output
 bot = telebot.TeleBot(config.bot_token)
 
-@bot.message_handler(commands==["menu"])
+@bot.message_handler(commands=["menu"])
 def send_menu(message):
     get_raw_menu("https://lamantin-kafe.ru/lamantin-menu-bistro/")
     bot.send_message(message.chat.id, get_menu_table(),parse_mode="Markdown")
